@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customers</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+  <!-- This is the Start of the Tables. The first table is for beverages items -->
+  <div class="list-group-item" id="grandparent">
+    <div id="expander" data-target="#beverages" data-toggle="collapse" data-group-id="beverages" data-role="expander">
+        <ul class="list-inline">
+            <li id="grandparentIcon">&gt;</li>
+            <li>Beverages</li>
+        </ul>
+    </div>
+
+    <!--   <% if (messages.error) { %>
+  <p style="color:red"><%- messages.error %></p>
+<% } %> -->
+<div class="collapse" id="beverages" aria-expanded="true">
+<% if (messages.success) { %>
+  <p class="alert alert-success mt-4"><%- messages.success %></p>
+<% } %>  
+<br>
+
+<table class="table table-striped">
+<thead>
+<tr>
+  <th></th>
+  <th scope="col">Item ID</th>
+  <th scope="col">Name</th>
+  <th scope="col">Item Status</th>
+  <th scope="col">Quantity</th>
+  <th scope="col">Markup %</th>
+  <th scope="col">Sold Last 4 weeks</th>
+  <th scope="col">On Order</th>
+
+</tr>
+</thead>
+<tbody>
+<% if(data.length){
+
+for(var i = 0; i< data.length; i++) 
+
+if(data[i].category == "beverages") { {%>  
+<tr>
+  <td><div>&gt;</div></td>
+  <td><%= data[i].itemId%></td>
+  <td><%= data[i].name%></td>
+  <td><%= data[i].item_status%></td>
+  <td><%= data[i].quantity%></td>
+  <td><%= data[i].markup%></td>
+  <td><%= data[i].amt_sold%></td>
+  <td><%= data[i].curr_order_amt%></td>
+  <td></td>
+</tr>
+<% }
+}    
+ }else{ %>
+     <tr>
+        <td colspan="3">No user</td>
+     </tr>
+  <% } %>
+</div>
+
+    <div class="collapse" id="beverages" aria-expanded="true">
+      <table class="table">
+        
+      </table>
+    </div>
+    <!-- This is the table for Bread / Bakery Items -->
+    <div class="list-group-ite" id="grandparen">
+      <div id="expande" data-target="#bakery" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+          <ul class="list-inline">
+              <li id="grandparentIcon">&gt;</li>
+              <li>Bread/Bakery</li>
+          </ul>
+      </div>
+      <div class="collapse" id="bakery" aria-expanded="true">
+        <% if (messages.success) { %>
+          <p class="alert alert-success mt-4"><%- messages.success %></p>
+        <% } %>  
+        <br>
+        
+        <table class="table table-striped">
+        <thead>
+        <tr>
+          <th></th>
+          <th scope="col">Item ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Item Status</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Markup %</th>
+          <th scope="col">Sold Last 4 weeks</th>
+          <th scope="col">On Order</th>
+        
+        </tr>
+        </thead>
+        <tbody>
+        <% if(data.length){
+        
+        for(var i = 0; i< data.length; i++) 
+        
+        if(data[i].category == "bakery") { {%>  
+        <tr>
+          <td><div>&gt;</div></td>
+          <td><%= data[i].itemId%></td>
+          <td><%= data[i].name%></td>
+          <td><%= data[i].item_status%></td>
+          <td><%= data[i].quantity%></td>
+          <td><%= data[i].markup%></td>
+          <td><%= data[i].amt_sold%></td>
+          <td><%= data[i].curr_order_amt%></td>
+          <td></td>
+        </tr>
+        <% }
+        }    
+         }else{ %>
+             <tr>
+                <td colspan="3">No user</td>
+             </tr>
+          <% } %>
+        </div>
+        
+            <div class="collapse" id="bakery" aria-expanded="true">
+              <table class="table">
+                
+              </table>
+            </div>
+      <!-- This is the Table for Canned Goods-->
+      <div class="list-group-ite" id="grandparent">
+        <div id="expande" data-target="#canned" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+            <ul class="list-inline">
+                <li id="grandparentIcon">&gt;</li>
+                <li>Canned/Jarred Goods</li>
+            </ul>
+        </div>
+        <div class="collapse" id="canned" aria-expanded="true">
+          <% if (messages.success) { %>
+            <p class="alert alert-success mt-4"><%- messages.success %></p>
+          <% } %>  
+          <br>
+          
+          <table class="table table-striped">
+          <thead>
+          <tr>
+            <th></th>
+            <th scope="col">Item ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Item Status</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Markup %</th>
+            <th scope="col">Sold Last 4 weeks</th>
+            <th scope="col">On Order</th>
+          
+          </tr>
+          </thead>
+          <tbody>
+          <% if(data.length){
+          
+          for(var i = 0; i< data.length; i++) 
+          
+          if(data[i].category == "canned") { {%>  
+          <tr>
+            <td><div>&gt;</div></td>
+            <td><%= data[i].itemId%></td>
+            <td><%= data[i].name%></td>
+            <td><%= data[i].item_status%></td>
+            <td><%= data[i].quantity%></td>
+            <td><%= data[i].markup%></td>
+            <td><%= data[i].amt_sold%></td>
+            <td><%= data[i].curr_order_amt%></td>
+            <td></td>
+          </tr>
+          <% }
+          }    
+           }else{ %>
+               <tr>
+                  <td colspan="3">No user</td>
+               </tr>
+            <% } %>
+          </div>
+          
+              <div class="collapse" id="canned" aria-expanded="true">
+                <table class="table">
+                  
+                </table>
+              </div>
+        <!-- This is the table for Dairy items -->
+        <div class="list-group-ite" id="grandparen">
+          <div id="expande" data-target="#Dairy" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+              <ul class="list-inline">
+                  <li id="grandparentIcon">&gt;</li>
+                  <li>Dairy</li>
+              </ul>
+          </div>
+          <div class="collapse" id="Dairy" aria-expanded="true">
+            <% if (messages.success) { %>
+              <p class="alert alert-success mt-4"><%- messages.success %></p>
+            <% } %>  
+            <br>
+            
+            <table class="table table-striped">
+            <thead>
+            <tr>
+              <th></th>
+              <th scope="col">Item ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Item Status</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Markup %</th>
+              <th scope="col">Sold Last 4 weeks</th>
+              <th scope="col">On Order</th>
+            
+            </tr>
+            </thead>
+            <tbody>
+            <% if(data.length){
+            
+            for(var i = 0; i< data.length; i++) 
+            
+            if(data[i].category == "dairy") { {%>  
+            <tr>
+              <td><div>&gt;</div></td>
+              <td><%= data[i].itemId%></td>
+              <td><%= data[i].name%></td>
+              <td><%= data[i].item_status%></td>
+              <td><%= data[i].quantity%></td>
+              <td><%= data[i].markup%></td>
+              <td><%= data[i].amt_sold%></td>
+              <td><%= data[i].curr_order_amt%></td>
+              <td></td>
+            </tr>
+            <% }
+            }    
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+              <% } %>
+            </div>
+            
+                <div class="collapse" id="Dairy" aria-expanded="true">
+                  <table class="table">
+                    
+                  </table>
+                </div>
+          <!-- This is the table for Dry/Baking goods-->
+          <div class="list-group-ite" id="grandparen">
+            <div id="expande" data-target="#Baking" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                <ul class="list-inline">
+                    <li id="grandparentIcon">&gt;</li>
+                    <li>Dry/Baking Goods</li>
+                </ul>
+            </div>
+            <div class="collapse" id="Baking" aria-expanded="true">
+              <% if (messages.success) { %>
+                <p class="alert alert-success mt-4"><%- messages.success %></p>
+              <% } %>  
+              <br>
+              
+              <table class="table table-striped">
+              <thead>
+              <tr>
+                <th></th>
+                <th scope="col">Item ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Item Status</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Markup %</th>
+                <th scope="col">Sold Last 4 weeks</th>
+                <th scope="col">On Order</th>
+              
+              </tr>
+              </thead>
+              <tbody>
+              <% if(data.length){
+              
+              for(var i = 0; i< data.length; i++) 
+              
+              if(data[i].category == "baking") { {%>  
+              <tr>
+                <td><div>&gt;</div></td>
+                <td><%= data[i].itemId%></td>
+                <td><%= data[i].name%></td>
+                <td><%= data[i].item_status%></td>
+                <td><%= data[i].quantity%></td>
+                <td><%= data[i].markup%></td>
+                <td><%= data[i].amt_sold%></td>
+                <td><%= data[i].curr_order_amt%></td>
+                <td></td>
+              </tr>
+              <% }
+              }    
+               }else{ %>
+                   <tr>
+                      <td colspan="3">No user</td>
+                   </tr>
+                <% } %>
+              </div>
+              
+                  <div class="collapse" id="Baking" aria-expanded="true">
+                    <table class="table">
+                      
+                    </table>
+                  </div>
+            <!-- This is the table for the Frozen Items -->
+            <div class="list-group-ite" id="grandparen">
+              <div id="expande" data-target="#frozen" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                  <ul class="list-inline">
+                      <li id="grandparentIcon">&gt;</li>
+                      <li>Frozen Foods</li>
+                  </ul>
+              </div>
+              <div class="collapse" id="frozen" aria-expanded="true">
+                <% if (messages.success) { %>
+                  <p class="alert alert-success mt-4"><%- messages.success %></p>
+                <% } %>  
+                <br>
+                
+                <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th></th>
+                  <th scope="col">Item ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Item Status</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Markup %</th>
+                  <th scope="col">Sold Last 4 weeks</th>
+                  <th scope="col">On Order</th>
+                
+                </tr>
+                </thead>
+                <tbody>
+                <% if(data.length){
+                
+                for(var i = 0; i< data.length; i++) 
+                
+                if(data[i].category == "frozen") { {%>  
+                <tr>
+                  <td><div>&gt;</div></td>
+                  <td><%= data[i].itemId%></td>
+                  <td><%= data[i].name%></td>
+                  <td><%= data[i].item_status%></td>
+                  <td><%= data[i].quantity%></td>
+                  <td><%= data[i].markup%></td>
+                  <td><%= data[i].amt_sold%></td>
+                  <td><%= data[i].curr_order_amt%></td>
+                  <td></td>
+                </tr>
+                <% }
+                }    
+                 }else{ %>
+                     <tr>
+                        <td colspan="3">No user</td>
+                     </tr>
+                  <% } %>
+                </div>
+                
+                    <div class="collapse" id="frozen" aria-expanded="true">
+                      <table class="table">
+                        
+                      </table>
+                    </div>
+              <!-- This is the table for the meat items -->
+              <div class="list-group-ite" id="grandparen">
+                <div id="expande" data-target="#meat" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                    <ul class="list-inline">
+                        <li id="grandparentIcon">&gt;</li>
+                        <li>Meat</li>
+                    </ul>
+                </div>
+                <div class="collapse" id="meat" aria-expanded="true">
+                  <% if (messages.success) { %>
+                    <p class="alert alert-success mt-4"><%- messages.success %></p>
+                  <% } %>  
+                  <br>
+                  
+                  <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th></th>
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Item Status</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Markup %</th>
+                    <th scope="col">Sold Last 4 weeks</th>
+                    <th scope="col">On Order</th>
+                  
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% if(data.length){
+                  
+                  for(var i = 0; i< data.length; i++) 
+                  
+                  if(data[i].category == "meat") { {%>  
+                  <tr>
+                    <td><div>&gt;</div></td>
+                    <td><%= data[i].itemId%></td>
+                    <td><%= data[i].name%></td>
+                    <td><%= data[i].item_status%></td>
+                    <td><%= data[i].quantity%></td>
+                    <td><%= data[i].markup%></td>
+                    <td><%= data[i].amt_sold%></td>
+                    <td><%= data[i].curr_order_amt%></td>
+                    <td></td>
+                  </tr>
+                  <% }
+                  }    
+                   }else{ %>
+                       <tr>
+                          <td colspan="3">No user</td>
+                       </tr>
+                    <% } %>
+                  </div>
+                  
+                      <div class="collapse" id="meat" aria-expanded="true">
+                        <table class="table">
+                          
+                        </table>
+                      </div>
+                <!-- This is the table for Produce Items -->
+                <div class="list-group-ite" id="grandparen">
+                  <div id="expande" data-target="#produce" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                      <ul class="list-inline">
+                          <li id="grandparentIcon">&gt;</li>
+                          <li>Produce</li>
+                      </ul>
+                  </div>
+                  <div class="collapse" id="produce" aria-expanded="true">
+                    <% if (messages.success) { %>
+                      <p class="alert alert-success mt-4"><%- messages.success %></p>
+                    <% } %>  
+                    <br>
+                    
+                    <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th></th>
+                      <th scope="col">Item ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Item Status</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Markup %</th>
+                      <th scope="col">Sold Last 4 weeks</th>
+                      <th scope="col">On Order</th>
+                    
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% if(data.length){
+                    
+                    for(var i = 0; i< data.length; i++) 
+                    
+                    if(data[i].category == "produce") { {%>  
+                    <tr>
+                      <td><div>&gt;</div></td>
+                      <td><%= data[i].itemId%></td>
+                      <td><%= data[i].name%></td>
+                      <td><%= data[i].item_status%></td>
+                      <td><%= data[i].quantity%></td>
+                      <td><%= data[i].markup%></td>
+                      <td><%= data[i].amt_sold%></td>
+                      <td><%= data[i].curr_order_amt%></td>
+                      <td></td>
+                    </tr>
+                    <% }
+                    }    
+                     }else{ %>
+                         <tr>
+                            <td colspan="3">No user</td>
+                         </tr>
+                      <% } %>
+                    </div>
+                    
+                        <div class="collapse" id="produce" aria-expanded="true">
+                          <table class="table">
+                            
+                          </table>
+                        </div>
+                  <!-- This is the Table for Cleaners section -->
+                  <div class="list-group-ite" id="grandparen">
+                    <div id="expande" data-target="#cleaners" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                        <ul class="list-inline">
+                            <li id="grandparentIcon">&gt;</li>
+                            <li>Cleaners</li>
+                        </ul>
+                    </div>
+                    <div class="collapse" id="cleaners" aria-expanded="true">
+                      <% if (messages.success) { %>
+                        <p class="alert alert-success mt-4"><%- messages.success %></p>
+                      <% } %>  
+                      <br>
+                      
+                      <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th></th>
+                        <th scope="col">Item ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Item Status</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Markup %</th>
+                        <th scope="col">Sold Last 4 weeks</th>
+                        <th scope="col">On Order</th>
+                      
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <% if(data.length){
+                      
+                      for(var i = 0; i< data.length; i++) 
+                      
+                      if(data[i].category == "cleaners") { {%>  
+                      <tr>
+                        <td><div>&gt;</div></td>
+                        <td><%= data[i].itemId%></td>
+                        <td><%= data[i].name%></td>
+                        <td><%= data[i].item_status%></td>
+                        <td><%= data[i].quantity%></td>
+                        <td><%= data[i].markup%></td>
+                        <td><%= data[i].amt_sold%></td>
+                        <td><%= data[i].curr_order_amt%></td>
+                        <td></td>
+                      </tr>
+                      <% }
+                      }    
+                       }else{ %>
+                           <tr>
+                              <td colspan="3">No user</td>
+                           </tr>
+                        <% } %>
+                      </div>
+                      
+                          <div class="collapse" id="cleaners" aria-expanded="true">
+                            <table class="table">
+                              
+                            </table>
+                          </div>
+                    <!-- This is the table for Paper Goods -->
+                    <div class="list-group-ite" id="grandparen">
+                      <div id="expande" data-target="#paper" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                          <ul class="list-inline">
+                              <li id="grandparentIcon">&gt;</li>
+                              <li>Paper Goods</li>
+                          </ul>
+                      </div>
+                      <div class="collapse" id="paper" aria-expanded="true">
+                        <% if (messages.success) { %>
+                          <p class="alert alert-success mt-4"><%- messages.success %></p>
+                        <% } %>  
+                        <br>
+                        
+                        <table class="table table-striped">
+                        <thead>
+                        <tr>
+                          <th></th>
+                          <th scope="col">Item ID</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Item Status</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Markup %</th>
+                          <th scope="col">Sold Last 4 weeks</th>
+                          <th scope="col">On Order</th>
+                        
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% if(data.length){
+                        
+                        for(var i = 0; i< data.length; i++) 
+                        
+                        if(data[i].category == "paper") { {%>  
+                        <tr>
+                          <td><div>&gt;</div></td>
+                          <td><%= data[i].itemId%></td>
+                          <td><%= data[i].name%></td>
+                          <td><%= data[i].item_status%></td>
+                          <td><%= data[i].quantity%></td>
+                          <td><%= data[i].markup%></td>
+                          <td><%= data[i].amt_sold%></td>
+                          <td><%= data[i].curr_order_amt%></td>
+                          <td></td>
+                        </tr>
+                        <% }
+                        }    
+                         }else{ %>
+                             <tr>
+                                <td colspan="3">No user</td>
+                             </tr>
+                          <% } %>
+                        </div>
+                        
+                            <div class="collapse" id="paper" aria-expanded="true">
+                              <table class="table">
+                                
+                              </table>
+                            </div>
+                            <!-- This is the table for Personal care items -->
+                      <div class="list-group-ite" id="grandparen">
+                        <div id="expande" data-target="#personal" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                            <ul class="list-inline">
+                                <li id="grandparentIcon">&gt;</li>
+                                <li>Personal Care</li>
+                            </ul>
+                        </div>
+                        <div class="collapse" id="personal" aria-expanded="true">
+                          <% if (messages.success) { %>
+                            <p class="alert alert-success mt-4"><%- messages.success %></p>
+                          <% } %>  
+                          <br>
+                          
+                          <table class="table table-striped">
+                          <thead>
+                          <tr>
+                            <th></th>
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Item Status</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Markup %</th>
+                            <th scope="col">Sold Last 4 weeks</th>
+                            <th scope="col">On Order</th>
+                          
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <% if(data.length){
+                          
+                          for(var i = 0; i< data.length; i++) 
+                          
+                          if(data[i].category == "personal") { {%>  
+                          <tr>
+                            <td><div>&gt;</div></td>
+                            <td><%= data[i].itemId%></td>
+                            <td><%= data[i].name%></td>
+                            <td><%= data[i].item_status%></td>
+                            <td><%= data[i].quantity%></td>
+                            <td><%= data[i].markup%></td>
+                            <td><%= data[i].amt_sold%></td>
+                            <td><%= data[i].curr_order_amt%></td>
+                            <td></td>
+                          </tr>
+                          <% }
+                          }    
+                           }else{ %>
+                               <tr>
+                                  <td colspan="3">No user</td>
+                               </tr>
+                            <% } %>
+                          </div>
+                          
+                              <div class="collapse" id="personal" aria-expanded="true">
+                                <table class="table">
+                                  
+                                </table>
+                              </div>
+                              <!-- This is the table for Other items -->
+                        <div class="list-group-ite" id="grandparen">
+                          <div id="expande" data-target="#other" data-toggle="collapse" data-group-id="grandparen" data-role="expander">
+                              <ul class="list-inline">
+                                  <li id="grandparentIcon">&gt;</li>
+                                  <li>Other</li>
+                              </ul>
+                          </div>
+                          <div class="collapse" id="other" aria-expanded="true">
+                            <% if (messages.success) { %>
+                              <p class="alert alert-success mt-4"><%- messages.success %></p>
+                            <% } %>  
+                            <br>
+                            
+                            <table class="table table-striped">
+                            <thead>
+                            <tr>
+                              <th></th>
+                              <th scope="col">Item ID</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Item Status</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Markup %</th>
+                              <th scope="col">Sold Last 4 weeks</th>
+                              <th scope="col">On Order</th>
+                            
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% if(data.length){
+                            
+                            for(var i = 0; i< data.length; i++) 
+                            
+                            if(data[i].category == "other") { {%>  
+                            <tr>
+                              <td><div>&gt;</div></td>
+                              <td><%= data[i].itemId%></td>
+                              <td><%= data[i].name%></td>
+                              <td><%= data[i].item_status%></td>
+                              <td><%= data[i].quantity%></td>
+                              <td><%= data[i].markup%></td>
+                              <td><%= data[i].amt_sold%></td>
+                              <td><%= data[i].curr_order_amt%></td>
+                              <td></td>
+                            </tr>
+                            <% }
+                            }    
+                             }else{ %>
+                                 <tr>
+                                    <td colspan="3">No user</td>
+                                 </tr>
+                              <% } %>
+                            </div>
+                            
+                                <div class="collapse" id="other" aria-expanded="true">
+                                  <table class="table">
+                                    
+                                  </table>
+                                </div>
+</div>
+</body>
+</html>
